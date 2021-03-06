@@ -6,6 +6,7 @@ public class Calculator {
 //Assuming Numbers are separated by comma(,) and New Line (\n)
 //Also combining for “//[delimiter]\n[numbers…]”
 //Handling Negative numbers also
+//For numbers greater than 1000 should be ignored
 
 	
 public int Add(String numbers) {
@@ -36,7 +37,9 @@ public int Add(String numbers) {
 	        		else
 	        			negative += ("," + i);
 	        	}
-				sum+= Integer.parseInt(i);
+				if(Integer.parseInt(i) < 1000) {
+					sum+= Integer.parseInt(i);
+				}
 			}
 			
 			if(!negative.equals("")){
