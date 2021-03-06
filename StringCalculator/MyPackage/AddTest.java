@@ -13,6 +13,7 @@ public class AddTest {
 		
 		assertEquals(16,calc.Add("2,3,5,6"));
 		assertEquals(3,calc.Add("3"));
+		
 		assertEquals(0,calc.Add(""));
 		
 	}
