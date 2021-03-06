@@ -11,7 +11,7 @@ public class AddTest {
 		
 		Calculator calc = new Calculator();
 		
-		assertEquals(16,calc.Add("2,3,5,6"));
+		assertEquals(20,calc.Add("2,3\n4,5,6"));
 		assertEquals(3,calc.Add("3"));
 		
 		assertEquals(0,calc.Add(""));

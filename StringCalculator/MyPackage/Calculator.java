@@ -3,7 +3,7 @@ package MyPackage;
 public class Calculator {
 
 	
-	//Assuming Numbers are separated by comma(,)
+	//Assuming Numbers are separated by comma(,) and New Line (\n)
 	public int Add(String numbers) {
 		
 		if(numbers.isEmpty()) {
@@ -19,7 +19,10 @@ public class Calculator {
 		int sum =0 ;
 		
 		for(String i:arr) {
-			sum+= Integer.parseInt(i); 
+			for(String j: i.split("\n")) {
+				sum+=Integer.parseInt(j);	
+			}
+			//sum+= Integer.parseInt(i); 
 		}
 		
 		
