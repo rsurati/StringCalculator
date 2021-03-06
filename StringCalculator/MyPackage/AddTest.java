@@ -18,6 +18,23 @@ public class AddTest {
 		
 	}
 	
+	@Test
+    public void test2(){
+		Calculator calc = new Calculator();
+    	try {
+			calc.Add("-1,2");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+
+		try {
+			calc.Add("2,-4,3,-5");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
+		}
+    }
 	
 	
 
