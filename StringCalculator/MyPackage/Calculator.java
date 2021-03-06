@@ -2,7 +2,8 @@ package MyPackage;
 
 public class Calculator {
 
-	//Assuming At max 2 numbers are given separated by comma(,)
+	
+	//Assuming Numbers are separated by comma
 	public int Add(String numbers) {
 		
 		if(numbers.isEmpty()) {
@@ -15,7 +16,13 @@ public class Calculator {
 			return Integer.parseInt(arr[0]);
 		}
 		
+		int sum =0 ;
 		
-		return(Integer.parseInt(arr[0])+Integer.parseInt(arr[1]));
+		for(String i:arr) {
+			sum+= Integer.parseInt(i); 
+		}
+		
+		
+		return(sum);
 	}
 }
