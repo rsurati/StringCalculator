@@ -11,7 +11,7 @@ public class AddTest {
 		
 		Calculator calc = new Calculator();
 		
-		assertEquals(6,calc.Add("//[***]\n1***2***3"));
+		assertEquals(10,calc.Add("//[*][%][&]\n1*2%3&4"));
 		
 		
 	}
