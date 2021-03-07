@@ -11,32 +11,8 @@ public class AddTest {
 		
 		Calculator calc = new Calculator();
 		
-		assertEquals(8,calc.Add("8,1000"));
-		assertEquals(3,calc.Add("//;\n1;2"));
-		assertEquals(20,calc.Add("2,3\n4,5,6"));
-		assertEquals(3,calc.Add("3"));
-		assertEquals(0,calc.Add(""));
+		assertEquals(6,calc.Add("//[***]\n1***2***3"));
+		
 		
 	}
-	
-	@Test
-    public void test2(){
-		Calculator calc = new Calculator();
-    	try {
-			calc.Add("-1,2");
-		}
-		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -1");
-		}
-
-		try {
-			calc.Add("2,-4,3,-5");
-		}
-		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
-		}
-    }
-	
-	
-
 }

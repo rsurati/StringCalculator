@@ -15,40 +15,53 @@ public int Add(String numbers) {
 		String negative="";
 		String arr[];
 		int sum=0 ;
+		int count=0;
+		char del;
+		String delimiter="";
+		char[] ch = new char[numbers.length()]; 
+		
+ 
+		del= numbers.charAt(3);
+	
+		for (int i = 3; i < numbers.length(); i++) { 
+			
+			System.out.println(numbers.charAt(i));
+			if(numbers.charAt(i)==']') {
+				break;
+			}
+			count++;
+			
+        } 
+			//System.out.println("Count is:"+count);
+			//System.out.println("Numbers length is:"+numbers.length());
+			
+			
 		if(numbers.isEmpty()) {
-			return 0;
+			return 9;
 		}
 		else {
-			
-			String delimiter = ",";
-			if(numbers.matches("//(.*)\n(.*)"))
-			{
-				delimiter = Character.toString(numbers.charAt(2));
-				numbers = numbers.substring(4);
-			}
-			
-			arr = numbers.split(delimiter + "|\n");
-			
-			for(String i : arr) {
 				
-				if(Integer.parseInt(i) < 0){
-	        		if(negative.equals(""))
-	        			negative = i;
-	        		else
-	        			negative += ("," + i);
-	        	}
-				if(Integer.parseInt(i) < 1000) {
-					sum+= Integer.parseInt(i);
+				delimiter = Character.toString(numbers.charAt(3));
+				numbers = numbers.substring(count+5);
+				//System.out.println(numbers.toString());
+				
+				
+				for(int i=0;i<numbers.length();i++) {
+					
+					if(numbers.charAt(i)!=del)
+					{
+						char temp = numbers.charAt(i);
+						sum+=Integer.parseInt(Character.toString(temp));
+					}
+					
 				}
+				
+				
 			}
 			
-			if(!negative.equals("")){
-				throw new IllegalArgumentException("Negatives not allowed: " + negative);
-			}
 			
-			
-		}		
-		return sum;
+		return sum;	
+		
 			
 		
 	}
